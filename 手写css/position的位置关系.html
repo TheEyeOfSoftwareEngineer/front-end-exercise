@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style type="text/css">
+    .outer {
+      width: 500px;
+      height: 500px;
+      border: 1px solid red;
+      position: relative;
+    }
+    
+    .inner {
+      width: 50px;
+      height: 50px;
+      border: 1px solid blue;
+      position: relative;
+      /* top: 50px;
+      left: 80px; */  
+      /* right: 10px;
+      bottom: 10px; */
+      
+      top: -10px;
+      left: -20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- top为正值的时候向下移动，left为正值向右移动；right为正值的时候其实是向左移动，bottom为正值的时候向上移动；
+  top为负值时候向上移动，left为负值向左移动；right为负值向右移动，bottom负值向上移动； -->
+  <div class="outer">
+    <div class="inner">
+      inner
+    </div>
+  </div>
+</body>
+</html>
