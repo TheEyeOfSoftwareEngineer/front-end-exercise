@@ -7,3 +7,9 @@ function myTypeof(obj) {
   res = res.substring(0, res.length-1).toLowerCase();
   return res;
 }
+
+
+let a = null;
+console.log(Object.prototype.toString.call(a))
+let res = myTypeof(a);
+console.log(res);

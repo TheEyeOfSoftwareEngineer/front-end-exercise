@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    .outer {
+        display: flex;
+        width: 400px;
+        height: 200px;
+      }
+
+      .item {
+        flex-grow: 1;
+      }
+
+      .item1 {
+        width: 100px;
+        height: 200px;
+        background: tomato;
+      }
+
+      .item2 {
+        width: 50px;
+        height: 200px;
+        background: blue;
+      }
+
+      .item3 {
+        width: 10px;
+        height: 200px;
+        background: green;
+      }
+  </style>
+</head>
+<body>
+  <!-- 关于flex的grow和shrink的原理比较就是：有多余空间的情况下，比如grow为三个1，外部的宽度为500，内部分别为100，50，10。那么对于出来的宽度为240。这时候我们将grow相加相当于需要把240分为3份。这样每一份就要多80的宽度。那么经过计算后的宽度为100+80，50+80，10+80。 -->
+
+  <!-- shink的话比如外部的宽度为500，内部宽度和为650（300+shrink1，150+shrink2，200+shrink3）。这样超出的宽度为150。我们需要先计算总压缩：300*1+150*2+200*3=1200的总压缩。然后我们再去求解压缩值。先求解压缩率300* 1/1200 = 0.25, 150*0.25 = 37.5，然后第一个的实际宽度为300-37.5=262.5。 那么对于第三个就是 200*3/1200 = 0.5, 150*0.5 = 75, 200-75=125。 -->
+
+  <!-- 同样，如果出现flex-shrink总和小于1？那么计算溢出空间（收缩总和）的结果有所变化。比如：shrink设置为0.1, 0.2, 0.3， 原溢出空间为200，实际溢出空间：200 * （0.1 + 0.2 + 0.3）/ 1 = 120。 -->
+
+  <!-- flex-basis指定flex元素在主轴方向上的初始大小
+  一旦 flex item 放进 flex 容器，并不能保证能够按照 flex-basis 设置的大小展示。浏览器会根据 flex-basis 计算主轴是否有剩余空间。既然是跟宽度相关，那么 max-width，min-width，width 和 box 的大小优先级是怎么样的。
+  max-width/min-width > flex-basis > width > box -->
+
+  <div class="outer">
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+  </div>
+</body>
+</html>

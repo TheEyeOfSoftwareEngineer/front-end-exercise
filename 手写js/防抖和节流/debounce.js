@@ -56,3 +56,25 @@ function debounce(fn, delay, immediate) {
     }
   }
 }
+
+// 在react项目中使用
+// src/@utils/debounce.js
+export const debounce = (fn, wait) => {
+  let time = null;
+  return function(e) {
+    if(timer) {
+      clearTimeout(timer);
+    }
+    time = setTimeout(() => {
+      fn.apply(this, arguments);
+    }, wait)
+  }
+}
+
+import {debounce} from '../..//@utils/debounce.js'
+
+scroll = debounce((e) => {
+  // ...
+}, 500)
+
+{/* <div onScroll={(e) => {this.scroll(e)}}></div> */}

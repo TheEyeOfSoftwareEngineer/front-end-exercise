@@ -5,7 +5,8 @@ function add(a, b, c) {
 }
 add(1, 2, 3);
 let addCurry = curry(add);
-addCurry(1)(2)(3);
+let res = addCurry(1)(2)(3);
+console.log(res);
 
 function curry(fn) {
   // console.log(fn.length, arguments);

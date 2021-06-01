@@ -11,7 +11,7 @@ function myNew() {
   let obj = new Object();
   let constructor = [...arguments].shift();
   obj.__proto__ = constructor.prototype;
-  let res = constructor.apply(this, arguments);
+  let res = constructor.apply(obj, arguments);
   // ret || obj 这里这么写考虑了构造函数显示返回 null 的情况
   return typeof res === 'object' ? res || obj : obj;
 }

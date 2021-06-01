@@ -23,3 +23,24 @@ const jsonp = ({url, params, callback}) => {
     }
   })
 }
+
+// Access-Control-Allow-Origin
+// Access-Control-Allow-Methods
+// Access-Control-Allow-Headers
+// Access-Control-Allow-Credentials
+// Access-Control-Allow-MAX-Age
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+axios.withCredentials = true;
+
+{/* <script>
+  var script = document.createElement('script')
+  script.type = 'text/javascript'
+  script.src = 'http://www.domain2.com:8080/login?user=admin&callback=handleCallback'
+  document.head.appendChild(script)
+  function handleCallback(res) {
+    ...
+  }
+</script> */}
+

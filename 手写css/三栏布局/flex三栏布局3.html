@@ -1,0 +1,40 @@
+<!-- flexbox解决方案 -->
+<section class="layout flexbox">
+  <style>
+
+      .layout.flexbox{
+          margin-top: 170px;
+      }    
+      .layout.flexbox .left-center-right{
+          display: flex;
+      }
+      .layout.flexbox .left{
+          width: 300px;
+          background-color: red;
+      }
+
+      .layout.flexbox .center{
+          flex:1;
+          background-color: yellow;
+      }
+
+      .layout.flexbox .right{
+          width: 300px;
+          background-color: blue;
+      }
+  </style>
+  <article class="left-center-right">
+      <div class="left"></div>
+      <div class="center">
+          <h2>flexbox解决方案</h2>
+          3.这是三栏布局flexbox方案中间部分
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+      </div>
+      <div class="right"></div>
+  </article>
+</section>
